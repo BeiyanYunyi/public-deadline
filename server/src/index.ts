@@ -3,6 +3,6 @@ import app from "./app";
 
 const server = createServer(app);
 
-server.listen(3000, () => {
+server.listen(3001, () => {
   console.log("server running");
 });
