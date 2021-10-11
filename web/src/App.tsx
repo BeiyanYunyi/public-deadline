@@ -1,45 +1,39 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import { IconButton, Stack, Text } from "@fluentui/react";
+import { TextField } from "@fluentui/react/lib/TextField";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
-  )
+    <Stack
+      style={{ marginLeft: 16, marginRight: 16 }}
+      verticalAlign="center"
+      horizontalAlign="center"
+    >
+      <Text variant="xxLargePlus">1111</Text>
+      <Stack horizontal>
+        <Stack.Item>
+          <TextField
+            styles={{ suffix: { padding: 0 } }}
+            iconProps={{ iconName: "AccountBrowserIcon" }}
+            suffix="111"
+            onRenderSuffix={() => (
+              <IconButton
+                iconProps={{ iconName: "Send" }}
+                title="Emoji"
+                ariaLabel="Emoji"
+              />
+            )}
+          />
+        </Stack.Item>
+        <Stack.Item>
+          <IconButton
+            iconProps={{ iconName: "Send" }}
+            title="Emoji"
+            ariaLabel="Emoji"
+          />
+        </Stack.Item>
+      </Stack>
+    </Stack>
+  );
 }
 
-export default App
+export default App;
