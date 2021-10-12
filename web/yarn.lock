@@ -1289,6 +1289,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"date-fns@npm:^2.25.0":
+  version: 2.25.0
+  resolution: "date-fns@npm:2.25.0"
+  checksum: 8896dc1dde0ee5ef77616942423bfa11fa2017a5ac19457293b7aaedc8822ff94f0a14eaf93da573b09b601dc0149eb430988a046cc9f79a2eb15f8c66c9c50c
+  languageName: node
+  linkType: hard
+
 "debug@npm:4, debug@npm:^4.0.1, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.3.1":
   version: 4.3.2
   resolution: "debug@npm:4.3.2"
@@ -3366,6 +3373,7 @@ fsevents@~2.3.2:
     "@types/react": ^17.0.0
     "@types/react-dom": ^17.0.0
     "@vitejs/plugin-react": ^1.0.0
+    date-fns: ^2.25.0
     eslint: ^7.2.0
     eslint-config-airbnb-typescript-prettier: ^4.2.0
     prettier: ^2.4.1

@@ -1,5 +1,5 @@
-import { IconButton, Stack, Text } from "@fluentui/react";
-import { TextField } from "@fluentui/react/lib/TextField";
+import { Stack, Text } from "@fluentui/react";
+import Task from "./components/Task";
 
 function App() {
   return (
@@ -8,30 +8,8 @@ function App() {
       verticalAlign="center"
       horizontalAlign="center"
     >
-      <Text variant="xxLargePlus">1111</Text>
-      <Stack horizontal>
-        <Stack.Item>
-          <TextField
-            styles={{ suffix: { padding: 0 } }}
-            iconProps={{ iconName: "AccountBrowserIcon" }}
-            suffix="111"
-            onRenderSuffix={() => (
-              <IconButton
-                iconProps={{ iconName: "Send" }}
-                title="Emoji"
-                ariaLabel="Emoji"
-              />
-            )}
-          />
-        </Stack.Item>
-        <Stack.Item>
-          <IconButton
-            iconProps={{ iconName: "Send" }}
-            title="Emoji"
-            ariaLabel="Emoji"
-          />
-        </Stack.Item>
-      </Stack>
+      <Text variant="xxLargePlus">我的待办</Text>
+      <Task />
     </Stack>
   );
 }
