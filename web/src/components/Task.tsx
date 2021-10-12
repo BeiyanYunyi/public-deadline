@@ -7,7 +7,7 @@ import {
   StackItem,
   Text,
 } from "@fluentui/react";
-import { formatDistanceToNow } from "date-fns";
+import { format } from "date-fns";
 import { zhCN } from "date-fns/locale";
 import taskDataForTest from "../tests/taskDataForTest";
 import MetaTaskProps from "../types/MetaTaskProps";
@@ -17,15 +17,14 @@ const MetaTask = ({ metaTask }: { metaTask: MetaTaskProps }) => {
     <>
       <Stack horizontal verticalAlign="center">
         <StackItem>
-          <Checkbox />
+          <Checkbox checked={metaTask.finished} />
         </StackItem>
         <StackItem>
           <ActivityItem
             comments={metaTask.description}
             timeStamp={
               metaTask.finalDate &&
-              formatDistanceToNow(metaTask.finalDate, {
-                addSuffix: true,
+              format(metaTask.finalDate, "MM-dd HH:mm:ss", {
                 locale: zhCN,
               })
             }
@@ -38,25 +37,29 @@ const MetaTask = ({ metaTask }: { metaTask: MetaTaskProps }) => {
 
 const Task = () => {
   return (
-    <DocumentCard>
-      <DocumentCardDetails>
-        <Stack tokens={{ childrenGap: 2 }} horizontalAlign="center">
-          <StackItem style={{ margin: 5 }}>
-            <Text variant="large">{taskDataForTest.task.description}</Text>
-          </StackItem>
-          {taskDataForTest.metaTasks.map((metaTask) => {
-            return (
-              <StackItem key={metaTask.id}>
-                <MetaTask metaTask={metaTask} />
+    <>
+      {taskDataForTest.tasks.map((task) => (
+        <DocumentCard key={task.id}>
+          <DocumentCardDetails>
+            <Stack tokens={{ childrenGap: 2 }} horizontalAlign="center">
+              <StackItem style={{ margin: 5 }}>
+                <Text variant="large">{task.description}</Text>
               </StackItem>
-            );
-          })}
-          <StackItem>
-            <Checkbox />
-          </StackItem>
-        </Stack>
-      </DocumentCardDetails>
-    </DocumentCard>
+              {task.metaTasks.map((metaTask) => {
+                return (
+                  <StackItem key={metaTask.id}>
+                    <MetaTask metaTask={metaTask} />
+                  </StackItem>
+                );
+              })}
+              <StackItem>
+                <Checkbox label="完成" />
+              </StackItem>
+            </Stack>
+          </DocumentCardDetails>
+        </DocumentCard>
+      ))}
+    </>
   );
 };
 
