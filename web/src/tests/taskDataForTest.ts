@@ -6,7 +6,9 @@ const taskDataForTest: {
   tasks: [
     {
       description: "全面揭批四人帮！",
-      id: "0",
+      id: "2c436500-8dbd-4e50-9a83-6cb658b261d6",
+      finished: false,
+      finalDate: Number(new Date("2021-10-16")),
       metaTasks: [
         {
           description:
@@ -24,7 +26,7 @@ const taskDataForTest: {
           description:
             "张春桥（1917年-2005年4月），男，汉族，山东菏泽巨野人，江青反革命集团的主犯。",
           id: "68917720-8211-4c12-8e1e-1197af3415dd",
-          finalDate: new Date("2021-10-13"),
+          finalDate: Number(new Date("2021-10-13")),
           finished: false,
         },
         {
