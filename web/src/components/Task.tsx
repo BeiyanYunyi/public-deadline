@@ -79,7 +79,7 @@ const MetaTask = ({
 const Task = ({ task }: { task: TaskProps }) => {
   const dispatch = useAppDispatch();
   return (
-    <DocumentCard key={task.id}>
+    <DocumentCard key={task.id} style={{ width: "100%" }}>
       <DocumentCardDetails>
         <Stack tokens={{ childrenGap: 2 }} horizontalAlign="center">
           <StackItem style={{ margin: 5 }}>
@@ -90,13 +90,17 @@ const Task = ({ task }: { task: TaskProps }) => {
               </StackItem>
             </Stack>
           </StackItem>
-          {task.metaTasks.map((metaTask) => {
-            return (
-              <StackItem key={metaTask.id}>
-                <MetaTask metaTask={metaTask} taskId={task.id} />
-              </StackItem>
-            );
-          })}
+          <StackItem style={{ width: "100%" }}>
+            <Stack horizontalAlign="start" tokens={{ childrenGap: 2 }}>
+              {task.metaTasks.map((metaTask) => {
+                return (
+                  <StackItem key={metaTask.id}>
+                    <MetaTask metaTask={metaTask} taskId={task.id} />
+                  </StackItem>
+                );
+              })}
+            </Stack>
+          </StackItem>
           <StackItem>
             <Checkbox
               label="完成"
@@ -115,11 +119,13 @@ const Task = ({ task }: { task: TaskProps }) => {
 const Tasks = () => {
   const tasks = useAppSelector((state) => state.tasks);
   return (
-    <>
+    <Stack tokens={{ childrenGap: 8 }}>
       {tasks.map((task) => (
-        <Task task={task} key={task.id} />
+        <StackItem key={task.id}>
+          <Task task={task} />
+        </StackItem>
       ))}
-    </>
+    </Stack>
   );
 };
 

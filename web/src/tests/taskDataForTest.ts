@@ -5,7 +5,7 @@ const taskDataForTest: {
 } = {
   tasks: [
     {
-      description: "全面揭批四人帮！",
+      description: "全面揭批四人帮",
       id: "2c436500-8dbd-4e50-9a83-6cb658b261d6",
       finished: false,
       finalDate: Number(new Date("2021-10-16")),
@@ -36,6 +36,29 @@ const taskDataForTest: {
           finished: false,
         },
       ],
+    },
+    {
+      description: "结束文化大革命",
+      id: "7e9accb2-8a7d-49c1-b18c-2049c8d680af",
+      metaTasks: [],
+      finished: false,
+    },
+    {
+      description: "“两个凡是”",
+      id: "46493af0-3c99-4dcd-b3e6-364bf463e0af",
+      metaTasks: [
+        {
+          description: "凡是毛主席作出的决策，我们都坚决维护",
+          id: "7c171eef-f1b7-47b6-85a6-18fa699b957b",
+          finished: false,
+        },
+        {
+          description: "凡是毛主席的指示，我们都始终不渝地遵循",
+          id: "a5880ad2-5195-40f5-a59b-db9a97cf7323",
+          finished: false,
+        },
+      ],
+      finished: false,
     },
   ],
 };
